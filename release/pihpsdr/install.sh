@@ -9,7 +9,7 @@ echo "removing old versions of pihpsdr"
 sudo rm -rf /usr/local/bin/pihpsdr
 echo "creating start script"
 cat <<EOT > start_pihpsdr.sh
-cd `pwd`
+cd $(pwd)
 /usr/local/bin/pihpsdr >log 2>&1
 EOT
 chmod +x start_pihpsdr.sh
@@ -21,8 +21,8 @@ Version=1.0
 Type=Application
 Terminal=false
 Name[eb_GB]=piHPSDR
-Exec=`pwd`/start_pihpsdr.sh
-Icon=`pwd`/hpsdr_icon.png
+Exec=$(pwd)/start_pihpsdr.sh
+Icon=$(pwd)/hpsdr_icon.png
 Name=piHPSDR
 EOT
 cp pihpsdr.desktop ~/Desktop
